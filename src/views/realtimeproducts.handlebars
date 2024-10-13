@@ -1,0 +1,41 @@
+<div class="webcontainer">
+    <div class="rtpcontainer">
+        <div class="rmpview">
+            
+            <h1>Real Time Products</h1>
+            <h2>Productos actualizados en tiempo real</h2>
+            <input type="text" id="search" placeholder="Buscar productos...">
+            <div id="contenedorProductos"></div>
+        </div>
+        
+        <div class="rptedit">
+            <h2>Formulario para agregar productos</h2>
+            <form class="formrtp">
+                <p>{{email}}</p>
+                <input type="hidden" id="role" value="{{role}}">
+                <input type="hidden" id="email" value="{{email}}">
+
+                <input type="text" id="title" placeholder="Titulo">
+                <input type="text" id="description" placeholder="Descripcion">
+                <input type="text" id="descriptionExpand" placeholder="Descripcion extendida">
+                <input type="number" id="price" placeholder="Precio">
+                <input type="text" id="img" value="Sin Imagen">
+                <input type="text" id="code" placeholder="Código">
+                <input type="number" id="stock" placeholder="Stock">
+                <input type="text" id="category" placeholder="Categoria">
+                <select id="status">
+                    <option value="true"> Activo </option>
+                    <option value="false"> Inactivo </option>
+                </select>
+                <button type="button" id="btnEnviar"> Enviar </button>
+            </form>
+        </div>
+        
+    </div> 
+</div>
+
+
+
+
+<script src="https://cdn.socket.io/4.7.4/socket.io.min.js"></script>
+<script type="module" src="js/realtime.js"></script>

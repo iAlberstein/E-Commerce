@@ -1,0 +1,33 @@
+<div class="webcontainer">
+  <h1>Gestión de Usuarios</h1>
+
+  <table class="controlUsersContainer">
+    <thead class="controlUsersEncabezados">
+      <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Rol</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody class="controlUsersDatos">
+      {{#each users}}
+        <tr>
+          <td>{{this.first_name}} {{this.last_name}}</td>
+          <td>{{this.email}}</td>
+          <td>{{this.role}}</td>
+          <td>
+            <form action="/api/users/{{this._id}}/role" method="POST">
+              <select name="role" required>
+                <option value="user">User</option>
+                <option value="premium">Premium</option>
+                <option value="admin">Admin</option>
+              </select>
+              <button class="controlUsersBoton" type="submit">Actualizar Rol</button>
+            </form>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table> 
+</div>

@@ -1,0 +1,18 @@
+
+<divc class="webcontainer">
+    <div class="container mt-5">
+        <h1>Inicio de Sesión</h1>
+        <form class="formulario" action="/api/users/login" method="POST">
+            <div class="form-group">
+                <label for="email"></label>
+                <input type="email" class="form-control input" id="email" name="email" placeholder="Email" required>
+            </div><br>
+            <div class="form-group">
+                <label for="password"></label>
+                <input type="password" class="form-control input" id="password" name="password" placeholder="Contraseña" required>
+            </div><br>
+            <button type="submit" class="btn btn-primary btnTiketera">Login</button>
+            <p>¿Olvidaste la contraseña? <a href="/reset-password"> Restablecer Contraseña </a></p>
+        </form>
+    </div>
+</div>

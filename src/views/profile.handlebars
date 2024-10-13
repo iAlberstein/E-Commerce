@@ -1,0 +1,24 @@
+
+<div class="webcontainer">
+  <h1>Mi Perfil</h1>
+
+  <div class="profile-card">
+    <p>Bienvenido, {{user.nombre}} {{user.apellido}}!</p>
+    <p>Rol: {{user.role}}</p>
+
+    <form action="/api/users/logout" method="POST">
+      <button class="btnTiketera" type="submit">Logout</button>
+    </form>
+
+    {{#if this.isAdmin}}
+      <a class="btnTiketera" href="/users">Gestionar Usuarios</a>
+      <a class="btnTiketera" href="/realtimeproducts">Modificar Productos</a>
+    {{else if this.isPremium}}
+      <a class="btnTiketera" href="/realtimeproducts">Modificar Productos</a>
+      <a class="btnTiketera" href="/products">Tienda</a>
+    {{else}}
+      <a class="btnTiketera" href="/chat">Chat en vivo</a>
+      <a class="btnTiketera" href="/products">Tienda</a>
+    {{/if}}
+  </div>
+</div>

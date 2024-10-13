@@ -1,0 +1,47 @@
+<div class="webcontainer">
+    <div class="d-flex justify-content-center align-items-center">
+        <h1 class="text-center titulo">Productos</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            {{#each productos}}
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                <a href="api/products/{{id}}" class="text-decoration-none">
+                    <div class="card h-100">
+                        <img src="{{img}}" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <h2 class="card-title">{{title}}</h2>
+                            <p class="card-text">{{description}}</p>
+                            <p class="card-text">Price: ${{price}}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="container mt-3">
+    <div class="numPag">
+        <p>Pagina {{currentPage}} de {{totalPages}} </p>
+    </div>
+    <div class="text-center"> <!-- Centra los enlaces horizontalmente -->
+        {{#if hasPrevPage}}
+        <a href="/products?page={{prevPage}}"> Anterior </a>
+        {{/if}}
+        {{#if hasNextPage}}
+        <a href="/products?page={{nextPage}}"> Siguiente </a>
+        {{/if}}
+    </div>
+    
+            
+</div>

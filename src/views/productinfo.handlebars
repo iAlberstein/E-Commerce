@@ -1,0 +1,56 @@
+<h1>PRODUCTO SELECCIONADO</h1>
+
+<div class="webcontainer">
+    <div class="cardInfoContainer">
+
+        <div class="cardInfo">
+            
+            <img src="{{img}}" alt="" class="imgInfo">
+
+            <div class="card-body-Info">
+                
+                <div class="productInfo">
+                    <h2 class="card-title">{{title}}</h2>
+                    <p class="card-text">{{descriptionExpand}}</p>
+                </div>
+                
+                <div class="paroductSubmit">
+                    <form action="/api/carts/{{cartId}}/product/{{id}}" method="POST">
+                        <p class="card-text">PRECIO: ${{price}}</p>
+                        <div class="quantity-controls">
+                            <button type="button" id="decrease" class="btnprodInfo">-</button>
+                            <input type="number" id="quantity" name="quantity" class="quantity" min="1" value="1" required>
+                            <button type="button" id="increase" class="btnprodInfo">+</button>
+                        </div>
+                        <button class="btnTiketeraInfo" type="submit">Agregar al Carrito</button>
+                    </form>
+                
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const decreaseButton = document.getElementById('decrease');
+        const increaseButton = document.getElementById('increase');
+        const quantityInput = document.getElementById('quantity');
+        const maxStock = {{stock}}; 
+
+        decreaseButton.addEventListener('click', function () {
+            let currentValue = parseInt(quantityInput.value);
+            if (currentValue > 1) {
+                quantityInput.value = currentValue - 1;
+            }
+        });
+
+        increaseButton.addEventListener('click', function () {
+            let currentValue = parseInt(quantityInput.value);
+            if (currentValue < maxStock) {
+                quantityInput.value = currentValue + 1;
+            }
+        });
+    });
+</script>

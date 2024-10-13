@@ -1,0 +1,28 @@
+ <div class="webcontainer">
+    <div class="container mt-5">
+       <h1>Registrarse</h1>
+       <form class="formulario" action="/api/users/register" method="post">
+           <div class="form-group">
+               <label for="first_name"></label>
+               <input type="text" class="form-control input" id="first_name" name="first_name" placeholder="Nombre">
+           </div><br>
+           <div class="form-group">
+               <label for="last_name"></label>
+               <input type="text" class="form-control input" id="last_name" name="last_name" placeholder="Apellido">
+           </div><br>
+           <div class="form-group">
+               <label for="email"></label>
+               <input type="email" class="form-control input" id="email" name="email" placeholder="Email" required>
+           </div><br>
+           <div class="form-group">
+               <label for="password"></label>
+               <input type="password" class="form-control input" id="password" name="password" placeholder="Contraseña" required>
+           </div><br>
+           <div class="form-group">
+               <label for="age"></label>
+               <input type="number" class="form-control input" id="age" name="age" placeholder="Edad" required>
+           </div><br>
+           <button class="btn btn-success btnTiketera" type="submit">Register</button>
+       </form>
+    </div>
+ </div>
